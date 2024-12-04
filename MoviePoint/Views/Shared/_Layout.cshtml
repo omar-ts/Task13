@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - MoviePoint</title>
+    <link rel="icon" href="~/images/logo.png" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/MoviePoint.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <nav class="shadow-sm">
+            <div class="left_nav">
+                <img src="~/images/logo.png" class="left_img" />
+                <div class="left_content">
+                    <a href="/Home/Index" class="left_title">Movie Point</a>
+                    <a href="/Home/Index" class="left_pages">Home</a>
+                    <a href="/Home/CategoryPage" class="left_pages">Categories</a>
+                    <a href="/Home/CinemaPage" class="left_pages">Cinemas</a>
+                </div>
+            </div>
+            <form action="/FindPage/Index" class="right_content">
+                <input type="text" name="MovieName" placeholder="Search for movie..." class="input_search" required />
+                <button type="submit" class="btn_search">Search</button>
+            </form>
+        </nav>
+    </header>
+    <div>
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
